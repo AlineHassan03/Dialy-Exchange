@@ -55,7 +55,8 @@ class _SettingScreenState extends State<SettingScreen> {
             title: Text("Language"),
             trailing: DropdownButton(
               value: initValue,
-              items: langualgeList.map(
+              items: langualgeList
+                  .map(
                     (month) => DropdownMenuItem(
                       alignment: AlignmentDirectional.center,
                       value: month,
@@ -115,7 +116,7 @@ class _SettingScreenState extends State<SettingScreen> {
 }
 
 class DataSearchForSettings extends SearchDelegate {
-  List Listlanguage = [
+  List ListCurrancy = [
     "SYP",
     "LBP",
     "EGP",
@@ -194,21 +195,21 @@ class DataSearchForSettings extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List filternames =
-        Listlanguage.where((element) => element.contains(query)).toList();
+        ListCurrancy.where((element) => element.contains(query)).toList();
 
     return ListView.builder(
-      itemCount: query == "" ? Listlanguage.length : filternames.length,
+      itemCount: query == "" ? ListCurrancy.length : filternames.length,
       itemBuilder: (context, i) {
         return InkWell(
             onTap: () {
-              query = query == "" ? Listlanguage[i] : filternames[i];
+              query = query == "" ? ListCurrancy[i] : filternames[i];
               showResults(context);
             },
             child: Container(
                 padding: EdgeInsets.all(10),
                 child: query == ""
                     ? Text(
-                        getLang(context, Listlanguage[i]),
+                        getLang(context, ListCurrancy[i]),
                         style: TextStyle(
                             fontSize: 19,
                             fontWeight: FontWeight.bold,
