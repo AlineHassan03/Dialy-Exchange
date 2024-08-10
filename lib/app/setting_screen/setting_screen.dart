@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:flutter_application_3/app/home_screen/home_screen.dart';
 import 'package:flutter_application_3/components/applocal.dart';
 import 'package:flutter_application_3/components/shaerd_pref/shared.dart';
 import 'package:flutter_application_3/main.dart';
+
+import '../pages/about_screen.dart';
+import '../pages/account_screen.dart';
+import '../pages/privacy_security_page.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -46,13 +49,16 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               title: Text(getLang(context, "Account")),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AccountScreen()));
+              }),
           ListTile(
             leading: const Icon(
               Icons.language_outlined,
               color: Colors.blue,
             ),
-            title: Text("Language"),
+            title: Text(getLang(context, "Language")),
             trailing: DropdownButton(
               value: initValue,
               items: langualgeList
@@ -94,15 +100,12 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               title: Text(getLang(context, "privacy&Security")),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {}),
-          ListTile(
-              leading: const Icon(
-                Icons.help,
-                color: Colors.blue,
-              ),
-              title: Text(getLang(context, "help&&support")),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PrivacySecurityPage()));
+              }),
           ListTile(
               leading: const Icon(
                 Icons.adb_outlined,
@@ -110,7 +113,10 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               title: Text(getLang(context, "About")),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AboutUsPage()));
+              }),
         ]));
   }
 }

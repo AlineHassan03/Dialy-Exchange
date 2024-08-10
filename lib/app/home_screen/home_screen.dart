@@ -11,6 +11,8 @@ import 'package:flutter_application_3/app/setting_screen/setting_screen.dart';
 
 import 'package:share_plus/share_plus.dart';
 
+import '../pages/privacy_security_page.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
@@ -121,7 +123,12 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.blue,
             ),
             title: Text(getLang(context, "Privacy policy")),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PrivacySecurityPage()));
+            },
           ),
         ],
       )),
