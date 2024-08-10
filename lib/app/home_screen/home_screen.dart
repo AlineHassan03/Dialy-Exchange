@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(getLang(context, "Share with friends")),
             onTap: () async {
               await Share.share(
-                  "${getLang(context, "You can download the application from the following link")} ${Uri.parse("https://www.google.com/")}");
+                  "${getLang(context, "You can download the application from the following link")} ${Uri.parse("https://raw.githubusercontent.com/AlineHassan03/Dialy-Exchange/main/Daily%20Exchange.apk")}");
             },
           ),
           ListTile(

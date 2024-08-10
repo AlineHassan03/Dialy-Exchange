@@ -14,7 +14,10 @@ class AboutUsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _Header('Welcome to Dialy Exchange'),
+              Text(
+                getLang(context, 'Welcome to Dialy Exchange'),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
               Text(getLang(context,
                   "We are a team of passionate individuals who are dedicated to creating innovative solutions that make a difference in people\'s lives.")),
               SizedBox(height: 20),
@@ -54,20 +57,6 @@ class AboutUsPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _Header extends StatelessWidget {
-  final String text;
-
-  _Header(this.text);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      getLang(context, text),
-      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     );
   }
 }
